@@ -1,0 +1,18 @@
+{
+  "suite_name": "Google",
+  "scenario": "Get status",
+  "scenario_description": "Test suite to verify that google is up",
+  "uri": "https://api.themoviedb.org/",
+  "path": "3/movie/",
+  "validation": "ecbb6d04d338fac6ecb9caad0fbd475b",
+  "test_cases": [
+    {
+      "id": "01",
+      "description": "Retrieve title for specific film using id",
+      "type": "GET",
+      "query": "550",
+      "response_route": "original_title",
+      "expected": "Fight Club"
+    }
+  ]
+}

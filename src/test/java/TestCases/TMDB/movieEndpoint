@@ -2,8 +2,9 @@
   "suite_name": "TMDB",
   "scenario": "MovieEndpoint",
   "scenario_description": "Test suite to verify functionality of TMDB API Movie Endpoint",
-  "directory": "https://api.themoviedb.org/3/movie/",
-  "validation": "?api_key=ecbb6d04d338fac6ecb9caad0fbd475b",
+  "uri": "https://api.themoviedb.org/",
+  "path": "3/movie/",
+  "validation": "ecbb6d04d338fac6ecb9caad0fbd475b",
   "test_cases": [
     {
       "id": "01",
@@ -17,7 +18,6 @@
       "id": "02",
       "description": "Retrieve total revenue for specific film using id",
       "type": "GET",
-      "domain": "https://api.themoviedb.org/",
       "query": "550",
       "response_route": "revenue",
       "expected": "100853753"
@@ -26,7 +26,6 @@
       "id": "03",
       "description": "Retrieve runtime for specific film using id",
       "type": "GET",
-      "domain": "https://api.themoviedb.org/",
       "query": "550",
       "response_route": "runtime",
       "expected": "139"
