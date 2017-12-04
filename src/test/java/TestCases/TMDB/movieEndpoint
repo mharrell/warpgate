@@ -20,7 +20,7 @@
       "type": "GET",
       "query": "550",
       "response_route": "revenue",
-      "expected": 1008537530
+      "expected": 1008537531
     },
     {
       "id": "03",
@@ -28,7 +28,7 @@
       "type": "GET",
       "query": "550",
       "response_route": "runtime",
-      "expected": 139
+      "expected": 1391
     }
   ]
 
