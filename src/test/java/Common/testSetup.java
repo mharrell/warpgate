@@ -6,17 +6,13 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.System;
 import java.util.List;
-import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import static io.restassured.RestAssured.get;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 
 public class testSetup {
 
-    public static void getTestFiles() {
+    public static void testStartup() {
 
         System.out.println("---Beginning Test Setup---");
         System.out.println("---Gathering Test Scenarios---");
@@ -59,37 +55,37 @@ public class testSetup {
         }
     }
 
-    public static void standupTest(String uri, String path, String validation, List<testCase.foo> tests) {
+    public static void standupTest(String uri, String path, String validation, List<testCase.body> tests) {
 
-        for (testCase.foo foo : tests) {
+        for (testCase.body test : tests) {
             RestAssured.reset();
             RestAssured.basePath = path;
             RestAssured.baseURI = uri;
 
                 try {
-                    executeTest(validation, foo);
-                    System.out.println(String.format("PASSED: Test %s - %s", foo.getId(), foo.getDescription()));
+                    executeTest(validation, test);
+                    logResults.logPassing(String.format("PASSED: Test %s - %s", test.getId(), test.getDescription()));
                 }
                 catch (AssertionError assertionError) {
-                System.out.println(String.format("FAILED: Test %s - %s", foo.getId(), foo.getDescription()));
+                logResults.logFailure((String.format("FAILED: Test %s - %s", test.getId(), test.getDescription())));
                 }
             }
         }
 
-    public static void executeTest(String validation, testCase.foo foo){
+    public static void executeTest(String validation, testCase.body test){
 
 
-//        if (foo.getType() == "GET")
-            get(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
+//        if (body.getType() == "GET")
+            get(String.format("%s?api_key=%s", test.getQuery(), validation)).then().body(test.getResponse_route(), equalTo(test.getExpected()));
 
 //        else if type "PUT" then
-//          put(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
+//          put(String.format("%s?api_key=%s", body.getQuery(), validation)).then().body(body.getResponse_route(), equalTo(body.getExpected()));
 
 //        else if type "POST" then
-//          post(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
+//          post(String.format("%s?api_key=%s", body.getQuery(), validation)).then().body(body.getResponse_route(), equalTo(body.getExpected()));
 
 //        else
-//          delete(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
+//          delete(String.format("%s?api_key=%s", body.getQuery(), validation)).then().body(body.getResponse_route(), equalTo(body.getExpected()));
 
 //        return test;
         }

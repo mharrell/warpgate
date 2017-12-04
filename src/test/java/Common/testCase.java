@@ -6,7 +6,7 @@ import java.util.List;
 public class testCase {
 
     private String suite_name, scenario, scenario_description, uri, path, validation;
-    private List<foo>test_cases = new ArrayList<foo>();
+    private List<body>test_cases = new ArrayList<body>();
 
     public String getSuite_name() {
         return suite_name;
@@ -57,15 +57,15 @@ public class testCase {
     }
 
 
-    public List<foo> getTest_cases() {
+    public List<body> getTest_cases() {
         return test_cases;
     }
 
-    public void setTest_cases(List<foo> test_cases) {
+    public void setTest_cases(List<body> test_cases) {
         this.test_cases = test_cases;
     }
 
-    public static class foo{
+    public static class body {
         private String id, description, type, query, response_route;
         private Object expected;
 
