@@ -2,6 +2,8 @@ package Common;
 
 import io.restassured.RestAssured;
 
+import static io.restassured.RestAssured.get;
+
 public class buildRequest {
 
 
@@ -9,6 +11,8 @@ public class buildRequest {
         String request;
 
         request = "\"/" + query + "?api_key=" + validation + "\").then().body(\"" + response + "\", equalTo(" + expected +")";
+
+//        get(request);
 
         return request;
 

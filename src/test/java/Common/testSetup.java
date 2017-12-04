@@ -49,11 +49,10 @@ public class testSetup {
 
                 for (int j = 0; j < directories.length; j++) {
                     if (directories[j].isFile()) {
-                        System.out.println("File " + directories[j].getName());
 
+                        System.out.println("File " + directories[j].getName());
                         createTest("https://api.themoviedb.org/", "3/movie/", "ecbb6d04d338fac6ecb9caad0fbd475b",
                                 "550", "budget", "630000");
-
 
                     } else if (directories[j].isDirectory()) {
                         System.out.println("Directory " + directories[j].getName());
@@ -77,13 +76,15 @@ public class testSetup {
 //        System.out.println(test);
 
 //        if type "GET" then
-        get(test);
+            get(test);
+//            get("/550?api_key=ecbb6d04d338fac6ecb9caad0fbd475b").then().body("budget", equalTo(63000000));
 
-        get("/550?api_key=ecbb6d04d338fac6ecb9caad0fbd475b").then().body("budget", equalTo(63000000));
 //        else if type "PUT" then
 //          put(test);
+
 //        else if type "POST" then
 //          post(test);
+
 //        else
 //          delete(test);
 
