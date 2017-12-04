@@ -14,17 +14,20 @@ package Common;
 //import static org.hamcrest.Matchers.equalTo;
 //import static org.testng.Assert.*;
 
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.System;
+import java.util.List;
 
 import static io.restassured.RestAssured.get;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 
 public class testSetup {
-
 
     public static void getTestFiles() {
 
@@ -39,6 +42,8 @@ public class testSetup {
         System.out.println("Path exists: " + folder.canRead());
 
         File[] listOfFiles = folder.listFiles();
+        ObjectMapper objectMapper = new ObjectMapper();
+
 
         for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].isFile()) {
@@ -51,8 +56,17 @@ public class testSetup {
                     if (directories[j].isFile()) {
 
                         System.out.println("File " + directories[j].getName());
-                        createTest("https://api.themoviedb.org/", "3/movie/", "ecbb6d04d338fac6ecb9caad0fbd475b",
-                                "550", "budget", "630000");
+                        System.out.println("File " + directories[j].getPath());
+
+                        try {
+                            testCase testCase = objectMapper.readValue(new File(directories[j].getPath()), testCase.class);
+
+                            createTest(testCase.getUri(), testCase.getPath(), testCase.getValidation(), testCase.getTest_cases());
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
 
                     } else if (directories[j].isDirectory()) {
                         System.out.println("Directory " + directories[j].getName());
@@ -64,32 +78,28 @@ public class testSetup {
         }
     }
 
-    public static String createTest(String uri, String path, String validation, String query, String response, String expected){
-        String test;
+    public static void createTest(String uri, String path, String validation, List<testCase.foo> tests) {
 
-        RestAssured.reset();
-        RestAssured.basePath = path;
-        RestAssured.baseURI = uri;
-
-        test = buildRequest.buildGetter(validation, query, response, expected);
-
-//        System.out.println(test);
+        for (testCase.foo foo : tests) {
+            RestAssured.reset();
+            RestAssured.basePath = path;
+            RestAssured.baseURI = uri;
 
 //        if type "GET" then
-            get(test);
-//            get("/550?api_key=ecbb6d04d338fac6ecb9caad0fbd475b").then().body("budget", equalTo(63000000));
+//            get(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().log().ifValidationFails().body(foo.getResponse_route(), equalTo(foo.getExpected()));
+            get(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
+
 
 //        else if type "PUT" then
-//          put(test);
+//          put(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
 
 //        else if type "POST" then
-//          post(test);
+//          post(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
 
 //        else
-//          delete(test);
+//          delete(String.format("%s?api_key=%s", foo.getQuery(), validation)).then().body(foo.getResponse_route(), equalTo(foo.getExpected()));
 
-        return test;
+//        return test;
+        }
     }
-
-
 }
