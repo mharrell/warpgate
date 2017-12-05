@@ -6,10 +6,11 @@ package Common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
+
 import java.io.File;
 import java.io.IOException;
-import java.lang.System;
 import java.util.List;
+
 import static io.restassured.RestAssured.get;
 import static org.hamcrest.core.IsEqual.equalTo;
 
