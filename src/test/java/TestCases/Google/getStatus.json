@@ -1,7 +1,7 @@
 {
   "suite_name": "Google",
   "scenario": "Get status",
-  "scenario_description": "Test suite to verify that google is up",
+  "scenario_description": "Test suite to verify that google is up (This is not a valid test)",
   "uri": "https://api.themoviedb.org/",
   "path": "3/movie/",
   "validation": "ecbb6d04d338fac6ecb9caad0fbd475b",

@@ -1,3 +1,7 @@
+//        Created by Mike Harrell 12.2.2017
+//        Last updated by Mike Harrell on 12.2.2017
+//        This file houses the classes pull test parameters from scenario files and create testClass objects
+
 package Common;
 
 import java.util.ArrayList;
@@ -5,6 +9,8 @@ import java.util.List;
 
 public class testCase {
 
+    //Creates list of arrays using test JSON files
+    //each array represents one test step.
     private String suite_name, scenario, scenario_description, uri, path, validation;
     private List<body>test_cases = new ArrayList<body>();
 
@@ -65,6 +71,8 @@ public class testCase {
         this.test_cases = test_cases;
     }
 
+
+    //constructor to create individual test step object using data pulled from test JSON file
     public static class body {
         private String id, description, type, query, response_route;
         private Object expected;

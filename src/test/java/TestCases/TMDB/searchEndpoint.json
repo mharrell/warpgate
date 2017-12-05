@@ -1,14 +1,14 @@
 {
   "suite_name": "TMDB",
-  "scenario": "MovieEndpoint",
-  "scenario_description": "Test suite to verify functionality of TMDB API Movie Endpoint",
+  "scenario": "These are not valid tests",
+  "scenario_description": "This third set of tests is intended to illustrate the functionality of the framework",
   "uri": "https://api.themoviedb.org/",
   "path": "3/movie/",
   "validation": "ecbb6d04d338fac6ecb9caad0fbd475b",
   "test_cases": [
     {
       "id": "01",
-      "description": "Retrieve title for specific film using id",
+      "description": "Search using movie title and return the title of the first result",
       "type": "GET",
       "query": "550",
       "response_route": "original_title",
@@ -16,7 +16,7 @@
     },
     {
       "id": "02",
-      "description": "Retrieve total revenue for specific film using id",
+      "description": "Rate a movie via the API while logged in",
       "type": "GET",
       "query": "550",
       "response_route": "revenue",
@@ -24,7 +24,7 @@
     },
     {
       "id": "03",
-      "description": "Retrieve runtime for specific film using id",
+      "description": "Add/remove a movie to your favorites",
       "type": "GET",
       "query": "550",
       "response_route": "runtime",
@@ -32,7 +32,7 @@
     },
     {
       "id": "04",
-      "description": "Retrieve adult status of a specific film",
+      "description": "Rate a movie as a guest",
       "type": "GET",
       "query": "550",
       "response_route": "adult",
@@ -40,7 +40,7 @@
     },
     {
       "id": "05",
-      "description": "Retrieve official website specific film using id",
+      "description": "Retrieve a list of rated movies",
       "type": "GET",
       "query": "550",
       "response_route": "homepage",
