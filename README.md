@@ -1,12 +1,13 @@
 # warpgate
 Test Framework Homework Assignment
 
-This is an automated REST test framework intended to be usable for any API.
+This is an automated REST test framework intended to be usable for any 
+.
 
-Some tests have been included as examples. They are intended to used on The Movie Database (www.themoviedb.org) api. 
+Some tests have been included as examples. They are intended to used on The Movie Database (www.themoviedb.org) API. 
 
 How it works:
-Tests are written as a JSON file using standard values as follows (NOTE: the user will have to supply their own TMDB api key for the tests to run correctly): 
+Tests are written as a JSON file using standard values as follows (NOTE: the user will have to supply their own TMDB API key for the tests to run correctly): 
 
 {
   "suite_name": ,
@@ -33,7 +34,7 @@ Tests are written as a JSON file using standard values as follows (NOTE: the use
 The values of the JSON are parsed out and used to construct test objects which are then used to generate Rest Assured queries. After a  step is validated, the result is sent to the console. This continues until all files in all test directories have been executed.
 
 Getting Started:
-Step 1: For the sake of this example. A valid TMDB aki key must be inserted as a string (in quotes) to the validation value in each JSON file.
+Step 1: For the sake of this example. A valid TMDB API key must be inserted as a string (in quotes) to the validation value in each JSON file.
 Step 2: Once the repo is cloned, the "File folder = new File("");" directory must be assigned manually, that is, the
 directory needs to be inserted between the two quotes in new File(""). This is done in the testSetup.java file on line 25.
 On my computer, the path is "/Users/mharrell/IdeaProjects/warpgate/src/test/java/TestCases"
