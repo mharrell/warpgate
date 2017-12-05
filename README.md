@@ -35,11 +35,8 @@ The values of the JSON are parsed out and used to construct test objects which a
 
 Getting Started:
 Step 1: For the sake of this example. A valid TMDB API key must be inserted as a string (in quotes) to the validation value in each JSON file.
-Step 2: Once the repo is cloned, the "File folder = new File("");" directory must be assigned manually, that is, the
-directory needs to be inserted between the two quotes in new File(""). This is done in the testSetup.java file on line 25.
-On my computer, the path is "/Users/mharrell/IdeaProjects/warpgate/src/test/java/TestCases"
-Step 3: Run a maven install.
-Step 4: Run the Runner.main() method in Runner.java.
+Step 2: Run a maven install.
+Step 3: Run the Runner.main() method in Runner.java.
 
 Possibilities for future development. 
  - Add functionality for more methods than GET.
