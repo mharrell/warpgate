@@ -40,7 +40,7 @@ On my computer, the path is "/Users/mharrell/IdeaProjects/warpgate/src/test/java
 Step 3: Run a maven install.
 Step 4: Run the Runner.main() method in Runner.java.
 
-Possibilities for furture development. 
+Possibilities for future development. 
  - Add functionality for more methods than GET.
  - Add functionality for more validation options.
  - Add functionality to accommodate more complex Rest Assured queries, including given() and when().
