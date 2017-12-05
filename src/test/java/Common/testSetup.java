@@ -20,10 +20,7 @@ public class testSetup {
     public static void testStartup() {
 
         //Create File[] at the directory of the test files
-        //TODO: Figure out how to just use the relative path.
-
-        //Add path to TestCases directory here!!!
-        File folder = new File("");
+        File folder = new File("src/test/java/TestCases");
 
         File[] listOfFiles = folder.listFiles();
         ObjectMapper objectMapper = new ObjectMapper();
