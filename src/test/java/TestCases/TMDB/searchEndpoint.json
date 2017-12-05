@@ -4,7 +4,7 @@
   "scenario_description": "This third set of tests is intended to illustrate the functionality of the framework",
   "uri": "https://api.themoviedb.org/",
   "path": "3/movie/",
-  "validation": "ecbb6d04d338fac6ecb9caad0fbd475b",
+  "validation": "",
   "test_cases": [
     {
       "id": "01",

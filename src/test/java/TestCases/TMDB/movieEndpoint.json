@@ -4,7 +4,7 @@
   "scenario_description": "Test suite to verify functionality of TMDB API Movie Endpoint",
   "uri": "https://api.themoviedb.org/",
   "path": "3/movie/",
-  "validation": "ecbb6d04d338fac6ecb9caad0fbd475b",
+  "validation": "",
   "test_cases": [
     {
       "id": "01",
