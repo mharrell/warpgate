@@ -1,8 +1,7 @@
 # warpgate
 Test Framework Homework Assignment
 
-This is an automated REST test framework intended to be usable for any 
-.
+This is an automated REST test framework intended to be usable for any api.
 
 Some tests have been included as examples. They are intended to used on The Movie Database (www.themoviedb.org) API. Some of the example tests will intentionally fail as a demonstration.
 
